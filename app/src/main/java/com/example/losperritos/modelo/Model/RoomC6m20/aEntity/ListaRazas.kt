@@ -1,4 +1,5 @@
-package com.example.losperritos.modelo.Model.Room
+//Esta Entidad es la representacion de la tabla que se escribe en la base de datos
+package com.example.losperritos.modelo.Model.RoomC6m20.aEntity
 
 
 import androidx.room.Entity

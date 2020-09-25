@@ -1,7 +1,7 @@
 package com.example.losperritos.modelo.Model.Retrofit
 
-import com.example.losperritos.modelo.Model.Room.ImagenesRazas
-import com.example.losperritos.modelo.Model.Room.ListaRazasInternet
+import com.example.losperritos.modelo.Model.RoomC6m20.aEntity.ImagenesRazas
+import com.example.losperritos.modelo.Model.RoomC6m20.aEntity.ListaRazasInternet
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
