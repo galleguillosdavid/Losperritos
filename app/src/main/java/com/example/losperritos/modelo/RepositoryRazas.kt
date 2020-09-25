@@ -1,10 +1,10 @@
 package com.example.losperritos.modelo
 
 import android.util.Log
-import com.example.losperritos.modelo.Retrofit.RetrofitRazas
-import com.example.losperritos.modelo.Room.ListaRazas
-import com.example.losperritos.modelo.Room.ListaRazasInternet
-import com.example.losperritos.modelo.Room.RazasDao
+import com.example.losperritos.modelo.Model.Retrofit.RetrofitRazas
+import com.example.losperritos.modelo.Model.Room.ListaRazas
+import com.example.losperritos.modelo.Model.Room.ListaRazasInternet
+import com.example.losperritos.modelo.Model.Room.RazasDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

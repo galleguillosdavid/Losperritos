@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.losperritos.modelo.RepositoryRazas
-import com.example.losperritos.modelo.Room.RazaDataBase
+import com.example.losperritos.modelo.Model.Room.RazaDataBase
 
 
 class ViewModelPerritos(application: Application): AndroidViewModel(application) {
@@ -16,11 +16,3 @@ class ViewModelPerritos(application: Application): AndroidViewModel(application)
         repository2.obtainDataInternet()
     }
 }
-
-
-
-//init{
-//    val terrainDao = MarsDataBase.getDataBase(application).getTerrainDao()
-//    repository = Repository(terrainDao)
-//    repository.getDataFromServer()
-//}

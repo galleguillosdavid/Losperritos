@@ -1,4 +1,4 @@
-package com.example.losperritos.modelo.Room
+package com.example.losperritos.modelo.Model.Room
 
 import com.google.gson.annotations.SerializedName
 

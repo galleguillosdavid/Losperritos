@@ -1,4 +1,4 @@
-package Ui
+package com.example.losperritos.modelo.Ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

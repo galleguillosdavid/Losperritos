@@ -1,10 +1,9 @@
-package com.example.losperritos.modelo.Room
+package com.example.losperritos.modelo.Model.Room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.losperritos.modelo.Room.ListaRazas
 
 
 private const val  DATA_BASE_NAME = "razas_db"
