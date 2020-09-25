@@ -1,13 +1,14 @@
-package com.example.losperritos.modelo
+package com.example.losperritos.modelo.Room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.losperritos.modelo.Room.ListaRazas
 
 
 private const val  DATA_BASE_NAME = "razas_db"
-@Database(entities = [ListaRazas::class],version = 1)
+@Database(entities = [ListaRazas::class, ImagenesRazas::class],version = 1)
 
 abstract class RazaDataBase: RoomDatabase() {
 
@@ -23,9 +24,12 @@ abstract class RazaDataBase: RoomDatabase() {
                 return razasInstance
             }
             synchronized(this){
-                val instance = Room.databaseBuilder(context,RazaDataBase::class.java,DATA_BASE_NAME)
+                val instance = Room.databaseBuilder(context,
+                    RazaDataBase::class.java,
+                    DATA_BASE_NAME
+                )
                     .build()
-                    INSTANCE=instance
+                    INSTANCE =instance
                 return  instance
             }
         }

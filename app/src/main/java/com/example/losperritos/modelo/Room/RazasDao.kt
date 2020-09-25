@@ -1,10 +1,12 @@
-package com.example.losperritos.modelo
+package com.example.losperritos.modelo.Room
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.losperritos.modelo.Room.ImagenesRazas
+import com.example.losperritos.modelo.Room.ListaRazas
 
 @Dao
 interface RazasDao {
@@ -19,13 +21,13 @@ interface RazasDao {
     @Query("SELECT * FROM lista_razas_table")
     fun getAllRazasFromDB():LiveData<List<ListaRazas>>
 
-    @Query("SELECT * FROM lista_razas_table WHERE id=:mId")
+    @Query("SELECT * FROM lista_razas_table WHERE razaid=:mId")
     fun obtainDataRazaFromDataBase(mId: String):LiveData<ListaRazas>
 
     @Query("SELECT * FROM imagenes_razas_table")
     fun getAllImagenesFromDB():LiveData<List<ImagenesRazas>>
 
-    @Query("SELECT * FROM imagenes_razas_table WHERE id=:mId")
+    @Query("SELECT * FROM imagenes_razas_table WHERE imagenesId=:mId")
     fun obtainDataImagenesFromDataBase(mId: String):LiveData<ImagenesRazas>
 
 }
