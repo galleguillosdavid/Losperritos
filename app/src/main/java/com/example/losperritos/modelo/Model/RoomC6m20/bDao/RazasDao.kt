@@ -1,4 +1,4 @@
-//Esta interface de Kotlin Verde, Data Acces Objet, nos proporciona los metodos Crood que nos dan acceso a los datos
+//Esta interface de Kotlin Verde, Data Acces Objet, nos proporciona los metodos CROD que nos dan acceso a los datos
 // solamenta al crear la anotacion @dato al principio, esta clase se convierte a interface
 // Esta interface solo declara metodos, pero no seimplementan,
 // Para declarar metodos, se hace declarando un nombre al metodo, lo que puede recibir y lo que devuelve C6 m53
@@ -17,7 +17,7 @@ import com.example.losperritos.modelo.Model.RoomC6m20.aEntity.ListaRazas
 interface RazasDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    //este metodo@insert(si hay conflictos = la estrategia. es reemplazar
+    //este metodo@insert(si hay conflictos = la estrategia. es reemplazar , Create: Crood
 
     suspend fun insertAllRazas(mListaRazas: List<ListaRazas>)
     // el atributo o palabra reservada suspend se utiliza para trabajo asincrono y es parte de corrutinas
@@ -28,18 +28,23 @@ interface RazasDao {
     // Aunque la estrategia para 2 tablas es: 2 Entity, 2 Dao, 1 archivo database
     // En este caso el metodo onconflict utiliza una funcion llamando al insertAllImagesRazas,
     // pero uzando (mImagenesRazas: List<ImagenesRazas>) a diferencia del anterior
+    // estos metodos se utilizan solo al ser llamados desde otras lugares
 
 
     @Query("SELECT * FROM lista_razas_table")
+    // cRod: Read
     fun getAllRazasFromDB():LiveData<List<ListaRazas>>
 
     @Query("SELECT * FROM lista_razas_table WHERE razaid=:mId")
+    // cRod: Read
     fun obtainDataRazaFromDataBase(mId: String):LiveData<ListaRazas>
 
     @Query("SELECT * FROM imagenes_razas_table")
+    // cRod: Read
     fun getAllImagenesFromDB():LiveData<List<ImagenesRazas>>
 
     @Query("SELECT * FROM imagenes_razas_table WHERE imagenesId=:mId")
+    // cRod: Read
     fun obtainDataImagenesFromDataBase(mId: String):LiveData<ImagenesRazas>
 
 }
