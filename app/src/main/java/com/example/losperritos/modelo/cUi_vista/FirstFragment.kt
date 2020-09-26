@@ -1,4 +1,4 @@
-package com.example.losperritos.modelo.Ui
+package com.example.losperritos.modelo.cUi_vista
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.losperritos.R
-import com.example.losperritos.modelo.ViewModel.ViewModelPerritos
+import com.example.losperritos.modelo.bViewModel.ViewModelPerritos
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.

@@ -1,4 +1,4 @@
-package com.example.losperritos.modelo.Model.RoomC6m20
+package com.example.losperritos.modelo.aModel.RoomC6m20
 
 /*
 Room es utlilizado para la persistencia de datos
@@ -38,7 +38,7 @@ data class Task (
                 val Total: Int=0
                 )
 
-B Dao:
+B) Dao:
 Es la Interfaz que declara un metodo, pero no los implementa por si sola, su objetivo es para interatuar con la base de datos, el dao Data acces Objet, es el acceso a los datos y es el crod: Crear, Leer, Actualizar y Borrar
 anotacion
 

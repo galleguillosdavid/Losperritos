@@ -1,4 +1,4 @@
-package com.example.losperritos.modelo.Model.Retrofit
+package com.example.losperritos.modelo.aModel.Retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

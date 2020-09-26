@@ -4,15 +4,15 @@
 // Para declarar metodos, se hace declarando un nombre al metodo, lo que puede recibir y lo que devuelve C6 m53
 // la creacion del primer dao interface esta en C6 m25
 
-package com.example.losperritos.modelo.Model.RoomC6m20.bDao
+package com.example.losperritos.modelo.aModel.RoomC6m20.bDao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.losperritos.modelo.Model.RoomC6m20.aEntity.ImagenesRazas
-import com.example.losperritos.modelo.Model.RoomC6m20.aEntity.ListaRazas
+import com.example.losperritos.modelo.aModel.RoomC6m20.aEntity.local.ImagenesRazas
+import com.example.losperritos.modelo.aModel.RoomC6m20.aEntity.local.ListaRazas
 
 @Dao
 interface RazasDao {
@@ -33,7 +33,7 @@ interface RazasDao {
 
 
     @Query("SELECT * FROM lista_razas_table")
-    // cRod: Read
+    // cRod: Read es la unica a la que se le pasa sql
     fun getAllRazasFromDB():LiveData<List<ListaRazas>>
 
     @Query("SELECT * FROM lista_razas_table WHERE razaid=:mId")
