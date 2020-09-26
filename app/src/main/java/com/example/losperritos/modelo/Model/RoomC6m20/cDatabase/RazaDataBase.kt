@@ -24,14 +24,25 @@ abstract class RazaDataBase: RoomDatabase() {
     // esta construcciono tiene las practicas necesarias para un correcto funcionamiento
 
     abstract fun getRazasDao(): RazasDao
+    //Esta funcion abstracta hereda de la interfaz dao que he creado y no del objeto dao
 
     companion object {
+    //el companion objet es un metodo estatico, donde no necesito tener una referencia del objeto
+    //para utilizar el metodo que esta en su interior
+
         @Volatile
+    // el @volatile, es una anotacion que va directamenta  virtual machine y le indica que muchos hilos pueden
+    // ver esta instancia u objeto en la memoria
         private var INSTANCE: RazaDataBase? = null
 
         fun getDataBase(context: Context): RazaDataBase {
+//            este metodo recibe un contexto y devuelve un RazaDataBase, que a su ves es un RoomDatabase
+
             val razasInstance = INSTANCE
+//          esta es una variable temporal  de la instancia, que es la instancia de la libreria de roomdatabase
+
             if (razasInstance != null) {
+
                 return razasInstance
             }
             synchronized(this){

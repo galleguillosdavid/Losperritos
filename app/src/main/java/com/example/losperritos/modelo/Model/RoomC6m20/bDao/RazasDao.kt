@@ -2,6 +2,7 @@
 // solamenta al crear la anotacion @dato al principio, esta clase se convierte a interface
 // Esta interface solo declara metodos, pero no seimplementan,
 // Para declarar metodos, se hace declarando un nombre al metodo, lo que puede recibir y lo que devuelve C6 m53
+// la creacion del primer dao interface esta en C6 m25
 
 package com.example.losperritos.modelo.Model.RoomC6m20.bDao
 
