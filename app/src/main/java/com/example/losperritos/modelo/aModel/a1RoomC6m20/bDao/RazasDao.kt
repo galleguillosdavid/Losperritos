@@ -3,16 +3,17 @@
 // Esta interface solo declara metodos, pero no seimplementan,
 // Para declarar metodos, se hace declarando un nombre al metodo, lo que puede recibir y lo que devuelve C6 m53
 // la creacion del primer dao interface esta en C6 m25
+// Aqui usamos los live data para hacer los elementos obserbables a cambios y reaacionar a ese cambio
 
-package com.example.losperritos.modelo.aModel.RoomC6m20.bDao
+package com.example.losperritos.modelo.aModel.a1RoomC6m20.bDao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.losperritos.modelo.aModel.RoomC6m20.aEntity.local.ImagenesRazas
-import com.example.losperritos.modelo.aModel.RoomC6m20.aEntity.local.ListaRazas
+import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ImagenesRazas
+import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ListaRazas
 
 @Dao
 interface RazasDao {

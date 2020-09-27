@@ -1,3 +1,4 @@
+//en Mvvm, las vistas solo observan loo que pasa en el vie model para poder obtener los datos
 package com.example.losperritos.modelo.cUi_vista
 
 import android.os.Bundle
@@ -17,14 +18,27 @@ import com.example.losperritos.modelo.bViewModel.ViewModelPerritos
 class FirstFragment : Fragment() {
 
      lateinit var mViewModel: ViewModelPerritos
+//    una variable que se crea pero no se instancia,
+//    especialmente usada para los fragmentos y ciclos de vida
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mViewModel = ViewModelProvider(this).get(ViewModelPerritos::class.java)
+//        le indicamos al fragmento cual es su view model,
+//        el view model que usara el fragmento es la clase que se llama ViewModelPerritos
+//        se puede realizar en cualquiera de estos 4:
+//        1) onAttach
+//        2) onCreate
+//        3)On Create View
+//        4) on Activitycreate
+//        los ciclos de vida completos estan en https://drive.google.com/file/d/1pJCdpi5ZXW6cW3fkVRS7GRKYVkcnj0kD/view?usp=sharing
+
     }
 
     override fun onCreateView(
+//
+
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {

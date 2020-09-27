@@ -1,4 +1,4 @@
-package com.example.losperritos.modelo.aModel.RoomC6m20
+package com.example.losperritos.modelo.aModel.a1RoomC6m20
 
 /*
 Room es utlilizado para la persistencia de datos
