@@ -4,16 +4,16 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 
-android {
-    compileSdkVersion 30
+android {//c15
+    compileSdkVersion 30  //version del sdk
     buildToolsVersion "30.0.2"
 
-    defaultConfig {
-        applicationId "com.example.losperritos"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+    defaultConfig {//
+        applicationId "com.example.losperritos" //regularmente la pagina web del creador
+        minSdkVersion 23  // minima version en la que puede funcionar el sdk
+        targetSdkVersion 30  // version de android en la que correra normalmente el proyecto
+        versionCode 1 //Version interna de la aplicacion, google lo revisa para avisar actualizaciones, el usuario no lo ve
+        versionName "1.0" // este es el numero de version que si ven los usuarios
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

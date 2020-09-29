@@ -16,7 +16,7 @@ import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ImagenesR
 import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ListaRazas
 
 @Dao
-interface RazasDao {
+interface RazasDaoInterface {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     //este metodo@insert(si hay conflictos = la estrategia. es reemplazar , Create: Crood

@@ -7,7 +7,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.losperritos.modelo.aModel.a1RoomC6m20.bDao.RazasDao
+import com.example.losperritos.modelo.aModel.a1RoomC6m20.bDao.RazasDaoInterface
 import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ImagenesRazas
 import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ListaRazas
 
@@ -23,7 +23,7 @@ abstract class RazaDataBase: RoomDatabase() {
     //que hayamos implementado
     // esta construcciono tiene las practicas necesarias para un correcto funcionamiento
 
-    abstract fun getRazasDao(): RazasDao
+    abstract fun getRazasDao(): RazasDaoInterface
     //Esta funcion abstracta hereda de la interfaz dao que he creado y no del objeto dao
 
     companion object {
