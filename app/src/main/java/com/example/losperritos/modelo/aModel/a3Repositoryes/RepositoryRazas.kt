@@ -1,7 +1,9 @@
 /*
 c8 m3:19
-los datos  se guardan temporalmente
- */
+la tarea principal de esta Clase Repository es ser la unica fuente confiable de datos para a que el view model pueda
+tomar estos datosy exponerlos en las vistas c9m0:7
+*/
+
 package com.example.losperritos.modelo.aModel.a3Repositoryes
 
 import android.util.Log
@@ -37,16 +39,26 @@ class RepositoryRazas(private val razasDao: RazasDaoInterface) {
                 Log.d("obtain", response.body()?.message.toString())
                 when (response.code()) {
                     in 200..299 ->
-                    CoroutineScope(Dispatchers.IO).launch {
-                        response.body()?.let { razasDao.insertAllRazas(converter(it.message)) }
+                        CoroutineScope(Dispatchers.IO).launch {
+                            response.body()?.let { razasDao.insertAllRazas(converter(it.message)) }
+                        }
+                    in 300..399 -> CoroutineScope(Dispatchers.IO).launch {
+                        Log.d(
+                            "Error 300",
+                            response.errorBody().toString()
+                        )
                     }
-                    in 300..399 ->CoroutineScope(Dispatchers.IO).launch {Log.d("Error 300",response.errorBody().toString())}
-                    in 400..499 ->CoroutineScope(Dispatchers.IO).launch {Log.d("Error 400",response.errorBody().toString())}
+                    in 400..499 -> CoroutineScope(Dispatchers.IO).launch {
+                        Log.d(
+                            "Error 400",
+                            response.errorBody().toString()
+                        )
+                    }
                 }
             }
 
             override fun onFailure(call: Call<ListaRazasInternet>, t: Throwable) {
-                Log.e("Repository", t.message.toString())
+                CoroutineScope(Dispatchers.IO).launch { Log.e("Repository", t.message.toString()) }
             }
         })
     }
