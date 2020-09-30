@@ -1,26 +1,58 @@
+//clase 9 m 1:00 aprox
 package com.example.losperritos.modelo.aModel.a4RecyclerView
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.losperritos.R
-import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ListaRazas
 import com.example.losperritos.modelo.aModel.a2Retrofit.aRazas
 import kotlinx.android.synthetic.main.razas_item_list.view.*
 
-class RazasAdapter {
+//class RazasAdapter: {
+// despues del paso 3 ya tengo un view holder para heredar , luego implementar 3 members
+class RazasAdapter: RecyclerView.Adapter<RazasAdapter.RazasViewHolder>() {
+//    4 heredar del view holder
+
     private var razasDataList = emptyList<aRazas>()
+//    1  Genere una variable que soporta el listado vacio
+
     fun actualizarListaRazas(mListaRazas: List<aRazas>){
+//    2  Esta funcion actualiza la lista
+
         razasDataList = mListaRazas
     }
 
     inner class  RazasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+//    3  Esta es la clase view holder
+
+        val nameOfRazas = itemView.tv1Razas
+        val itemView = itemView.setOnClickListener(this)
+
         override fun onClick(v: View?) {
             TODO("Not yet implemented")
         }
 
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RazasViewHolder {
+//        5
+        var itemView = LayoutInflater.from(parent.context).inflate(R.layout.razas_item_list, parent,false)
+        //        c8 m: 1:40 el parent es el view group donde se va a mostrar y el false es para no quede pegado el fondo
+
+        return RazasViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: RazasViewHolder, position: Int) {
+//        6
+        var numberOneRazas : aRazas = razasDataList[position]
+//        Creamos una variable que llenara todos los objetos en la posiocion especifica
+
+    }
+
+    override fun getItemCount(): Int {
+//        7
+        TODO("Not yet implemented")
     }
 }
 
