@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.losperritos.R
+import com.example.losperritos.modelo.aModel.a1RoomC6m20.aEntity.local.ListaRazas
 import com.example.losperritos.modelo.aModel.a2Retrofit.aRazas
 import kotlinx.android.synthetic.main.razas_item_list.view.*
 
-//class RazasAdapter: {
+
 // despues del paso 3 ya tengo un view holder para heredar , luego implementar 3 members
-class RazasAdapter: RecyclerView.Adapter<RazasAdapter.RazasViewHolder>() {
+class RazasAdapter(val mPassTheData: PassTheData): RecyclerView.Adapter<RazasAdapter.RazasViewHolder>() {
 //    4 heredar del view holder
 
     private var razasDataList = emptyList<aRazas>()
@@ -21,17 +22,23 @@ class RazasAdapter: RecyclerView.Adapter<RazasAdapter.RazasViewHolder>() {
 //    2  Esta funcion actualiza la lista
 
         razasDataList = mListaRazas
+
     }
 
     inner class  RazasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
 //    3  Esta es la clase view holder
 
         val nameOfRazas = itemView.tv1Razas
-        val itemView = itemView.setOnClickListener(this)
+        val itemView = itemView.setOnClickListener{
+            mPassTheData.PassTheRazas(razasDataList[adapterPosition])
+        }
 
         override fun onClick(v: View?) {
             TODO("Not yet implemented")
         }
+//        override fun onClick(v: View?) {
+//            TODO("Not yet implemented")
+//        }
 
     }
 
@@ -50,10 +57,13 @@ class RazasAdapter: RecyclerView.Adapter<RazasAdapter.RazasViewHolder>() {
 
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount()= razasDataList.size
 //        7
-        TODO("Not yet implemented")
-    }
+
+
+}
+interface PassTheData {
+    fun PassTheRazas(mListaRazas: aRazas)
 }
 
 
